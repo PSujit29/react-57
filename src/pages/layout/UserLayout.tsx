@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import { UserHeader, UserSidebar } from "../../components/user/";
 
 export default function UserLayout() {
+  // const ls = localStorage.getItem("_at57")
   return (
     <div className="flex h-screen bg-gray-100 overflow-hidden">
       <UserSidebar />

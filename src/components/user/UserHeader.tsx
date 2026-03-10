@@ -1,6 +1,8 @@
 import { HiMenu } from "react-icons/hi";
+// import axiosInstance from "../../api/axiosInstance";
 
-export const UserHeader = () => {
+export const UserHeader =  () => {
+  // const response = await axiosInstance.get()
   return (
     <header className="bg-white shadow-sm px-4 md:px-8 py-3 flex justify-between items-center border-b border-gray-200 z-10 relative">
       <div className="flex items-center gap-3">

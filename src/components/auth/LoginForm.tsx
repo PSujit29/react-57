@@ -13,7 +13,7 @@ const loginDTO = z.object({
 });
 
 export default function LoginForm() {
-  const { handleSubmit, control, formState: { errors },} = useForm<ILoginCredentials>({
+  const {handleSubmit, control, formState: { errors }} = useForm<ILoginCredentials>({
       defaultValues: { email: "", password: "" }, 
       resolver: zodResolver(loginDTO),
     });
@@ -21,8 +21,19 @@ export default function LoginForm() {
   const handleLoginSubmit = (data:ILoginCredentials) => {
     console.log(data); 
     //webstorage
-    // document.cookie = ""
-    Cookies.set("name", "value");
+    // document.cookie = "name=value;"
+    const response = {accessToken:"abc123xyz"}
+    Cookies.set("_at57", response.accessToken, {
+      expires:1,
+      // priority:"high",
+      // domain:"localhost",
+      sameSite:"Strict",
+      secure:true
+    });
+    localStorage.setItem("_at57", response.accessToken)
+    // const accessToken = localStorage.getItem("_at57")
+    // console.log(accessToken)
+    // sessionStorage.setItem("_at57", response.accessToken)
     //TODO Add API call later
   };
   // {errors && console.log(errors);}
